@@ -8,6 +8,7 @@ export const handleQuestions = async (_args) => {
       type: "input",
       name: "dir",
       message: "what is the name of the project?",
+      default: "temp",
       //   validate(value) {
       //     const valid = !isNaN(parseFloat(value));
       //     return valid || "Please enter a number";
@@ -37,5 +38,10 @@ export const handleQuestions = async (_args) => {
     });
   }
 
-  return await inquirer.prompt(questions);
+  const answers = await inquirer.prompt(questions);
+
+  return {
+    ..._args,
+    ...answers
+  }
 };

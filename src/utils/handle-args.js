@@ -11,6 +11,10 @@ export const handleArgs = () => {
       alias: "g",
       describe: "do you want to initialise the git repository",
     })
+    .option("open", {
+      alias: "o",
+      describe: "start dev server",
+    })
     //.demandOption(["site"], "Please specify the website")
     .help().argv;
 
@@ -20,5 +24,6 @@ export const handleArgs = () => {
     dir: args._[0],
     type: args.type,
     git: args.git,
+    open: args.open,
   };
 };

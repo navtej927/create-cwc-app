@@ -1,7 +1,9 @@
 import chalk from "chalk";
 import fs from "fs";
-import { createProject } from "./create-project";
 import Listr from "listr";
+import { execa } from "execa";
+
+import { createProject } from "./create-project";
 import { projectInstall } from "pkg-install";
 
 export const handleAnswers = async (_answers) => {
@@ -25,13 +27,19 @@ export const handleAnswers = async (_answers) => {
   ]);
 
   await tasks.run();
-  try {
-    // Updating with the New directory
-    process.chdir(process.cwd()+"/kl");
-    console.log("Updated working directory is: " + process.cwd());
-  } catch (err) {
-    // Printing error if any occurs
-    console.error("error occured while " + "changing directory: " + err);
+
+  if (_answers.open) {
+    try {
+      // Updating with the New directory
+      process.chdir(process.cwd() + "/temp");
+      const { stdout, stderr } = await execa("yarn", ["dev"]);
+      console.log(
+        stdout + stderr + "Updated working directory is: " + process.cwd()
+      );
+    } catch (err) {
+      // Printing error if any occurs
+      console.error("error occured while " + "changing directory: " + err);
+    }
   }
 
   console.log("%s Project ready", chalk.green.bold("DONE"));
