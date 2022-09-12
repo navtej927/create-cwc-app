@@ -14,7 +14,10 @@ export const handleArgs = () => {
     //.demandOption(["site"], "Please specify the website")
     .help().argv;
 
+  console.log("args", args);
+
   return {
+    dir: args._[0],
     type: args.type,
     git: args.git,
   };

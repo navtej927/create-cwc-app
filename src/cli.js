@@ -3,7 +3,6 @@ import { handleQuestions } from "./utils/handle-questions";
 import { handleAnswers } from "./utils/handle-answers";
 
 export async function cli() {
-  console.log("cli");
   // get the args
   const args = handleArgs();
   console.log("args", args);
