@@ -16,7 +16,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "create-cwc-app --t react",
     "start": "node --es-module-specifier-resolution=node ./src/cli.js",
-    "nuke": "rm -rf node_modules && rm -rf package-lock.json"
+    "nuke": "rm -rf node_modules && rm -rf package-lock.json && rm -rf temp && rm -rf yarn.lock" 
   },
   "repository": {
     "type": "git",
