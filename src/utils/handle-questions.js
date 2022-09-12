@@ -24,6 +24,5 @@ export const handleQuestions = async (_args) => {
     });
   }
 
-  const answers = await inquirer.prompt(questions);
-  console.log("answers", answers);
+  return await inquirer.prompt(questions);
 };

@@ -30,8 +30,10 @@
   "node": ">=14.16",
   "homepage": "https://github.com/navtej927/create-cwc-app#readme",
   "dependencies": {
+    "chalk": "^5.0.1",
     "esm": "^3.2.25",
     "inquirer": "^9.1.1",
+    "ncp": "^2.0.0",
     "yargs": "^17.5.1"
   }
 }
