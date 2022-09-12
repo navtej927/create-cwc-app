@@ -4,6 +4,7 @@
   "description": "",
   "main": "./bin/create-cwc-app.js",
   "bin": "./bin/create-cwc-app.js",
+  "type": "module",
   "publishConfig": {
     "access": "public"
   },
@@ -14,6 +15,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "create-cwc-app --t react",
+    "start": "node --es-module-specifier-resolution=node ./src/cli.js",
     "nuke": "rm -rf node_modules && rm -rf package-lock.json"
   },
   "repository": {

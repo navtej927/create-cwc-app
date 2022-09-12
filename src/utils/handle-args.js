@@ -7,10 +7,15 @@ export const handleArgs = () => {
       alias: "t",
       describe: "type of the project",
     })
+    .option("git", {
+      alias: "g",
+      describe: "do you want to initialise the git repository",
+    })
     //.demandOption(["site"], "Please specify the website")
     .help().argv;
 
   return {
     type: args.type,
+    git: args.git,
   };
 };
