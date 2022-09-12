@@ -31,7 +31,7 @@ export const handleAnswers = async (_answers) => {
   if (_answers.open) {
     try {
       // Updating with the New directory
-      process.chdir(process.cwd() + "/temp");
+      process.chdir(process.cwd() + `/${_answers.dir}`);
       const { stdout, stderr } = await execa("yarn", ["dev"]);
       console.log(
         stdout + stderr + "Updated working directory is: " + process.cwd()
