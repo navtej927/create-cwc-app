@@ -1,3 +1,9 @@
+import { handleArgs } from "./handleArgs";
+//import { questions } from "./inquirerQues";
+
 export function cli() {
-  console.log("heres");
+  // get the args
+  const args = handleArgs();
+  console.log(args)
+  //questions();
 }

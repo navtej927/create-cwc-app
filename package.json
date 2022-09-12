@@ -2,10 +2,8 @@
   "name": "create-cwc-app",
   "version": "1.0.0",
   "description": "",
-  "main": "/bin/create-cwc-app.js",
-  "bin": {
-    "create-cwc-app": "bin/create-cwc-app.js"
-  },
+  "main": "./bin/create-cwc-app.js",
+  "bin": "./bin/create-cwc-app.js",
   "publishConfig": {
     "access": "public"
   },
@@ -15,8 +13,8 @@
   ],
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "create-cwc-app",
-    "clean" : "rm -rf node_modules"
+    "dev": "create-cwc-app --t react",
+    "nuke": "rm -rf node_modules && rm -rf package-lock.json"
   },
   "repository": {
     "type": "git",
@@ -27,8 +25,11 @@
   "bugs": {
     "url": "https://github.com/navtej927/create-cwc-app/issues"
   },
+  "node": ">=14.16",
   "homepage": "https://github.com/navtej927/create-cwc-app#readme",
   "dependencies": {
-    "esm": "^3.2.25"
+    "esm": "^3.2.25",
+    "inquirer": "^9.1.1",
+    "yargs": "^17.5.1"
   }
 }
