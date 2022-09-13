@@ -101,8 +101,7 @@
     "skipLibCheck": true                                 /* Skip type checking all .d.ts files. */
   },
   "exclude": [
-    "node_modules",
-    "src/templates",
+    "node_modules"
   ],
   "files": [
     "src/cli.ts"
