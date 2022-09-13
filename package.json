@@ -29,6 +29,10 @@
   },
   "node": ">=14.16",
   "homepage": "https://github.com/navtej927/create-cwc-app#readme",
+  "engines" : { 
+    "npm" : ">=7.0.0",
+    "node" : ">=16.0.0"
+  },
   "dependencies": {
     "chalk": "^5.0.1",
     "esm": "^3.2.25",
