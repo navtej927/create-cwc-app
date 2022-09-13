@@ -14,9 +14,10 @@
   ],
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "create-cwc-app",
-    "start": "node --es-module-specifier-resolution=node ./src/index",
-    "nuke": "rm -rf node_modules && rm -rf package-lock.json && rm -rf temp && rm -rf yarn.lock" 
+    "start": "create-cwc-app",
+    "build": "",
+    "dev": "node --es-module-specifier-resolution=node ./src/index",
+    "nuke": "rm -rf node_modules && rm -rf package-lock.json && rm -rf temp && rm -rf yarn.lock"
   },
   "repository": {
     "type": "git",
@@ -29,9 +30,9 @@
   },
   "node": ">=14.16",
   "homepage": "https://github.com/navtej927/create-cwc-app#readme",
-  "engines" : { 
-    "npm" : ">=7.0.0",
-    "node" : ">=16.0.0"
+  "engines": {
+    "npm": ">=7.0.0",
+    "node": ">=16.0.0"
   },
   "dependencies": {
     "chalk": "^5.0.1",
