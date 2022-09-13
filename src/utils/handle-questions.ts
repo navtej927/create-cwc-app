@@ -1,6 +1,6 @@
 import inquirer from "inquirer";
 
-export const handleQuestions = async (_args) => {
+export const handleQuestions = async (_args: any) => {
   const questions = [];
 
   if (!_args.dir) {
@@ -22,8 +22,16 @@ export const handleQuestions = async (_args) => {
       type: "list",
       name: "type",
       message: "Project Type?",
-      choices: ["react", "static", "cli", "vueJs", "express", "node-package", "node-cli"],
-      filter(val) {
+      choices: [
+        "react",
+        "static",
+        "cli",
+        "vueJs",
+        "express",
+        "node-package",
+        "node-cli",
+      ],
+      filter(val: string) {
         return val.toLowerCase();
       },
     });

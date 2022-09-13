@@ -7,13 +7,13 @@ import { promisify } from "util";
 const access = promisify(fs.access);
 const copy = promisify(ncp);
 
-async function copyTemplateFiles(options) {
+async function copyTemplateFiles(options: any) {
   return copy(options.templateDirectory, options.targetDirectory, {
     clobber: false,
   });
 }
 
-export const createProject = (_answers) => {
+export const createProject = (_answers: any) => {
   let sourceDir = path.resolve(process.cwd(), `src/templates/${_answers.type}`);
 
   if (_answers.typescript) {

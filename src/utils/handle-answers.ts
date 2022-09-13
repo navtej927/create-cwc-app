@@ -3,10 +3,10 @@ import fs from "fs";
 import Listr from "listr";
 import { execa } from "execa";
 
-import { createProject } from "./create-project";
+import { createProject } from "./create-project.js";
 import { projectInstall } from "pkg-install";
 
-export const handleAnswers = async (_answers) => {
+export const handleAnswers = async (_answers: any) => {
   const tasks = new Listr([
     {
       title: "Creating project with template files...",
