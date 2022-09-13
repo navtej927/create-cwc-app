@@ -20,4 +20,4 @@ module.exports = {
     testPathIgnorePatterns: ['/node_modules/'],
     setupFilesAfterEnv: ['@testing-library/jest-dom/'],
     transformIgnorePatterns: ['/node_modules/', '\\.pnp\\.[^\\/]+$'],
-}
+};
