@@ -37,6 +37,10 @@
     "npm": ">=7.0.0",
     "node": ">=14.0.0"
   },
+  "files": [
+    "src",
+    "bin"
+  ],
   "dependencies": {
     "chalk": "^5.0.1",
     "esm": "^3.2.25",
