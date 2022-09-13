@@ -7,7 +7,7 @@ export const handleQuestions = async (_args) => {
     questions.push({
       type: "input",
       name: "dir",
-      message: "what is the name of the project?",
+      message: "Project Name:",
       default: "temp",
       //   validate(value) {
       //     const valid = !isNaN(parseFloat(value));
@@ -21,7 +21,7 @@ export const handleQuestions = async (_args) => {
     questions.push({
       type: "list",
       name: "type",
-      message: "What is the type of the project?",
+      message: "Project Type?",
       choices: ["React", "static", "cli", "vueJs", "express", "nodeModule"],
       filter(val) {
         return val.toLowerCase();
