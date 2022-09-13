@@ -8,7 +8,7 @@
     "test": "jest",
     "dev": "APP_ENV=development webpack serve --env mode=development --open --mode development",
     "start": "serve dist",
-    "build": "webpack"
+    "build": "mode=development webpack"
   },
   "jest": {
     "moduleNameMapper": {
@@ -35,8 +35,8 @@
     "webpack-cli": "^4.10.0"
   },
   "devDependencies": {
-    "@types/jest": "^29.0.1",
     "@types/react": "^18.0.19",
+    "@types/jest": "^29.0.1",
     "@types/react-dom": "^18.0.6",
     "css-loader": "^6.7.1",
     "dotenv-webpack": "^8.0.1",
