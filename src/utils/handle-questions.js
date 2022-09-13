@@ -29,6 +29,15 @@ export const handleQuestions = async (_args) => {
     });
   }
 
+  if (!_args.type) {
+    questions.push({
+      type: "confirm",
+      name: "typescript",
+      message: "Typescript support?",
+      default: false,
+    });
+  }
+
   if (!_args.git) {
     questions.push({
       type: "confirm",
@@ -42,6 +51,6 @@ export const handleQuestions = async (_args) => {
 
   return {
     ..._args,
-    ...answers
-  }
+    ...answers,
+  };
 };
