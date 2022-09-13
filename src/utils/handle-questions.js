@@ -22,7 +22,7 @@ export const handleQuestions = async (_args) => {
       type: "list",
       name: "type",
       message: "Project Type?",
-      choices: ["React", "static", "cli", "vueJs", "express", "nodeModule"],
+      choices: ["react", "static", "cli", "vueJs", "express", "node-package", "node-cli"],
       filter(val) {
         return val.toLowerCase();
       },

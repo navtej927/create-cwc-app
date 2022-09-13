@@ -1,5 +1,5 @@
 {
-  "name": "nodecli",
+  "name": "node-cli",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -8,7 +8,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "",
     "start": "",
-    "dev": "node ./src/cli.js"
+    "dev": "node ./src/cli.js",
+    "pack": "npm pack  --dry-run --json"
   },
   "keywords": [],
   "author": "",

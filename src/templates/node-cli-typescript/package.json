@@ -1,14 +1,17 @@
 {
-  "name": "nodecli",
+  "name": "node-cli-typescript",
   "version": "1.0.0",
-  "description": "",
+  "description": "This is repo for building the node-cli in typescript",
   "main": "index.js",
-  "bin": "./dist/cli",
+  "bin": {
+    "node-cli-typescript": "./bin/cli.js"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "tsc",
-    "start": "",
-    "dev": "ts-node ./src/cli.ts"
+    "start": "node-cli-typescript",
+    "dev": "ts-node ./execute-cli.ts",
+    "pack": "npm pack  --dry-run --json"
   },
   "files": [
     "dist",
