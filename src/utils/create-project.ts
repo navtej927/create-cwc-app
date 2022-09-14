@@ -2,6 +2,7 @@ import chalk from "chalk";
 import fs from "fs";
 import ncp from "ncp";
 import path from "path";
+import { fileURLToPath } from 'url';
 import { promisify } from "util";
 
 const access = promisify(fs.access);
@@ -14,22 +15,29 @@ async function copyTemplateFiles(options: any) {
 }
 
 export const createProject = (_answers: any) => {
-  let sourceDir = path.resolve(process.cwd(), `templates/${_answers.type}`);
-  const targetDir = path.resolve(process.cwd(), `${_answers.dir}`);
+  const targetDirectory = path.resolve(process.cwd(), _answers.directory);
+  const currentFileUrl = import.meta.url;
 
-  console.log("sourceDir", sourceDir);
-  console.log("targetDir", targetDir);
+  const templateDirectory = path.resolve(
+    decodeURI(fileURLToPath(currentFileUrl)),
+    "../../../templates",
+    _answers.type.toLowerCase()
+  );
 
-  if (_answers.typescript) {
-    sourceDir = path.resolve(
-      process.cwd(),
-      `templates/${_answers.type}-typescript`
-    );
-  }
+  console.log("currentFileUrl", currentFileUrl);
+  console.log("templateDirectory", templateDirectory);
+  console.log("targetDirectory", targetDirectory);
 
+  // if (_answers.typescript) {
+  //   sourceDir = path.resolve(
+  //     process.cwd(),
+  //     `templates/${_answers.type}-typescript`
+  //   );
+  // }
 
   copyTemplateFiles({
-    templateDirectory: sourceDir,
-    targetDirectory: targetDir,
+    templateDirectory: templateDirectory,
+    targetDirectory: targetDirectory,
   });
 };
+
