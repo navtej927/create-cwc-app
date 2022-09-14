@@ -1,12 +1,13 @@
 import inquirer from "inquirer";
+import { Args } from "./handle-args.js";
 
-export const handleQuestions = async (_args: { directory?: string | number; template?: string | undefined; git: any; typescript?: boolean | undefined; open?: boolean | undefined; dir?: any; type?: any; }) => {
+export const handleQuestions = async (_args: Args) => {
   const questions = [];
 
-  if (!_args.dir) {
+  if (!_args.directory) {
     questions.push({
       type: "input",
-      name: "dir",
+      name: "directory",
       message: "Project Name:",
       default: "temp",
       //   validate(value) {
@@ -17,11 +18,11 @@ export const handleQuestions = async (_args: { directory?: string | number; temp
     });
   }
 
-  if (!_args.type) {
+  if (!_args.template) {
     questions.push({
       type: "list",
-      name: "type",
-      message: "Project Type?",
+      name: "template",
+      message: "Project template?",
       choices: [
         "react",
         "static",
@@ -37,7 +38,7 @@ export const handleQuestions = async (_args: { directory?: string | number; temp
     });
   }
 
-  if (!_args.type) {
+  if (!_args.typescript) {
     questions.push({
       type: "confirm",
       name: "typescript",
@@ -51,6 +52,15 @@ export const handleQuestions = async (_args: { directory?: string | number; temp
       type: "confirm",
       name: "git",
       message: "Do you want to initialize git repo?",
+      default: false,
+    });
+  }
+
+  if (!_args.open) {
+    questions.push({
+      type: "confirm",
+      name: "open",
+      message: "Run dev server?",
       default: false,
     });
   }

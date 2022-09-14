@@ -1,4 +1,3 @@
-import chalk from "chalk";
 import fs from "fs";
 import ncp from "ncp";
 import path from "path";
@@ -15,24 +14,20 @@ async function copyTemplateFiles(options: any) {
 }
 
 export const createProject = (_answers: any) => {
-  const targetDirectory = path.resolve(process.cwd(), _answers.dir);
+  const targetDirectory = path.resolve(process.cwd(), _answers.directory);
   const currentFileUrl = import.meta.url;
 
   let templateDirectory = path.resolve(
     decodeURI(fileURLToPath(currentFileUrl)),
     "../../../templates",
-    _answers.type.toLowerCase()
+    _answers.template.toLowerCase()
   );
-
-  console.log("currentFileUrl", currentFileUrl);
-  console.log("templateDirectory", templateDirectory);
-  console.log("targetDirectory", targetDirectory);
 
   if (_answers.typescript) {
     templateDirectory = path.resolve(
       decodeURI(fileURLToPath(currentFileUrl)),
       "../../../templates",
-      _answers.type.toLowerCase()+"-typescript"
+      _answers.template.toLowerCase() + "-typescript"
     );
   }
 

@@ -1,6 +1,14 @@
 import yargs from "yargs";
 import { hideBin } from "yargs/helpers";
 
+export type Args = {
+  directory: string;
+  template: string;
+  git: boolean;
+  typescript: boolean;
+  open: boolean;
+};
+
 export const handleArgs = async () => {
   const args = await yargs(hideBin(process.argv))
     .help()
@@ -25,5 +33,5 @@ export const handleArgs = async () => {
     git: args.git,
     typescript: args.typescript,
     open: args.open,
-  };
+  } as Args;
 };
