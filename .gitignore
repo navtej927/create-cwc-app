@@ -5,8 +5,8 @@ logs
 npm-debug.log*
 
 # nested lock files
-src/templates/**/yarn.lock
-src/templates/**/package-lock.json
+templates/**/yarn.lock
+templates/**/package-lock.json
 
 # Build folders
 /dist
