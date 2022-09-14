@@ -15,7 +15,7 @@ async function copyTemplateFiles(options: any) {
 }
 
 export const createProject = (_answers: any) => {
-  const targetDirectory = path.resolve(process.cwd(), _answers.directory);
+  const targetDirectory = path.resolve(process.cwd(), _answers.dir);
   const currentFileUrl = import.meta.url;
 
   const templateDirectory = path.resolve(
