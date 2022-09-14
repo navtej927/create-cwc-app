@@ -2,7 +2,7 @@ import chalk from "chalk";
 import fs from "fs";
 import ncp from "ncp";
 import path from "path";
-import { fileURLToPath } from 'url';
+import { fileURLToPath } from "url";
 import { promisify } from "util";
 
 const access = promisify(fs.access);
@@ -18,7 +18,7 @@ export const createProject = (_answers: any) => {
   const targetDirectory = path.resolve(process.cwd(), _answers.dir);
   const currentFileUrl = import.meta.url;
 
-  const templateDirectory = path.resolve(
+  let templateDirectory = path.resolve(
     decodeURI(fileURLToPath(currentFileUrl)),
     "../../../templates",
     _answers.type.toLowerCase()
@@ -28,16 +28,16 @@ export const createProject = (_answers: any) => {
   console.log("templateDirectory", templateDirectory);
   console.log("targetDirectory", targetDirectory);
 
-  // if (_answers.typescript) {
-  //   sourceDir = path.resolve(
-  //     process.cwd(),
-  //     `templates/${_answers.type}-typescript`
-  //   );
-  // }
+  if (_answers.typescript) {
+    templateDirectory = path.resolve(
+      decodeURI(fileURLToPath(currentFileUrl)),
+      "../../../templates",
+      _answers.type.toLowerCase()+"-typescript"
+    );
+  }
 
   copyTemplateFiles({
     templateDirectory: templateDirectory,
     targetDirectory: targetDirectory,
   });
 };
-
