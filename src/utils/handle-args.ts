@@ -2,27 +2,28 @@ import yargs from "yargs";
 import { hideBin } from "yargs/helpers";
 
 export const handleArgs = async () => {
-  const args: any = yargs(hideBin(process.argv))
+  const args = await yargs(hideBin(process.argv))
     .help()
     .options({
-      type: {
+      template: {
         type: "string",
         alias: "t",
-        describe: "Type of the project:",
+        describe: "Project template:",
       },
       git: {
         type: "boolean",
         alias: "g",
-        describe: "Initialize repo with git",
+        describe: "Git initialization:",
       },
+      typescript: { type: "boolean", alias: "ts", describe: "Add typescript" },
       open: { type: "boolean", alias: "o", describe: "Run dev server" },
-    })
-    .epilog("copyright 2019").argv;
+    }).argv;
 
   return {
-    dir: args._[0],
-    type: args.type,
+    directory: args._[0],
+    template: args.template,
     git: args.git,
+    typescript: args.typescript,
     open: args.open,
   };
 };

@@ -7,7 +7,7 @@ import { handleAnswers } from "./utils/handle-answers.js";
 export async function cli() {
   console.log("cli executed with version", chalk.bgMagenta("1.1.1"));
   // get the args
-  const args = handleArgs();
+  const args = await handleArgs();
   console.log("args", args)
   const answers = await handleQuestions(args);
   await handleAnswers(answers);

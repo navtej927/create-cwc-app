@@ -1,6 +1,6 @@
 import inquirer from "inquirer";
 
-export const handleQuestions = async (_args: any) => {
+export const handleQuestions = async (_args: { directory?: string | number; template?: string | undefined; git: any; typescript?: boolean | undefined; open?: boolean | undefined; dir?: any; type?: any; }) => {
   const questions = [];
 
   if (!_args.dir) {
