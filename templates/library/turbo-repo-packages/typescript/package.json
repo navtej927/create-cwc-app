@@ -1,0 +1,27 @@
+{
+  "name": "javascript",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "turbo run build",
+    "test": "turbo run test",
+    "lint": "turbo run lint",
+    "dev": "turbo run dev"
+  },
+  "private": true,
+  "workspaces": [
+    "packages/*",
+    "client"
+  ],
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "lerna": "^5.5.4",
+    "turbo": "^1.5.5"
+  },
+  "dependencies": {
+    "typescript": "^4.8.4"
+  }
+}

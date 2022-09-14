@@ -1,0 +1,17 @@
+version: '3.8'
+services:
+  commets-api:
+    build: ./comments-api
+    ports:
+      - 4002:4002
+    volumes:
+      - ./comments-api/src:/usr/src/app/src
+    command: npm run dev
+  
+  users-api:
+    build: ./users-api
+    ports:
+      - 4001:4001
+    volumes:
+      - ./users-api/src:/usr/src/app/src
+    command: npm run dev
