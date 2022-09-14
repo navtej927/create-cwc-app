@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "This is repo for building the node-cli in typescript",
   "main": "index.js",
+  "type": "module",
   "bin": {
     "node-cli-typescript": "./bin/cli.js"
   },
@@ -15,8 +16,7 @@
   },
   "files": [
     "dist",
-    "bin",
-    ".npmrc"
+    "bin"
   ],
   "keywords": [],
   "author": "",
