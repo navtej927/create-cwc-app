@@ -6,7 +6,7 @@ import { projectInstall } from "pkg-install";
 import { createProject } from "./create-project.js";
 
 export const handleAnswers = async (_answers: any) => {
-  console.log("handleAnswers", _answers)
+  console.log("handleAnswers", _answers);
   const tasks = new Listr([
     {
       title: "Creating project with template files...",
@@ -21,27 +21,29 @@ export const handleAnswers = async (_answers: any) => {
       title: "Install dependencies",
       task: () =>
         projectInstall({
-          prefer: "npm",
           cwd: _answers.dir,
         }),
     },
   ]);
 
-  await tasks.run();
-
-  if (_answers.open) {
-    try {
-      // Updating with the New directory
-      process.chdir(process.cwd() + `/${_answers.dir}`);
-      const { stdout, stderr } = await execa("yarn", ["dev"]);
-      console.log(
-        stdout + stderr + "Updated working directory is: " + process.cwd()
-      );
-    } catch (err) {
-      // Printing error if any occurs
-      console.error("error occured while " + "changing directory: " + err);
-    }
+  try {
+    await tasks.run();
+    console.log("%s Project ready", chalk.green.bold("DONE"));
+  } catch (error) {
+    console.log("%s Error occurred", chalk.red.bold("ERROR"));
   }
 
-  console.log("%s Project ready", chalk.green.bold("DONE"));
+  // if (_answers.open) {
+  //   try {
+  //     // Updating with the New directory
+  //     process.chdir(process.cwd() + `/${_answers.dir}`);
+  //     const { stdout, stderr } = await execa("yarn", ["dev"]);
+  //     console.log(
+  //       stdout + stderr + "Updated working directory is: " + process.cwd()
+  //     );
+  //   } catch (err) {
+  //     // Printing error if any occurs
+  //     console.error("error occured while " + "changing directory: " + err);
+  //   }
+  // }
 };
