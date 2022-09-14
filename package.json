@@ -20,8 +20,9 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "create-cwc-app",
+    "prebuild": "rm -rf dist",
     "build": "tsc",
-    "dev": "node --es-module-specifier-resolution=node ./src/index",
+    "dev": "node ./bin/create-cwc-app.js",
     "nuke": "rm -rf node_modules && rm -rf package-lock.json && rm -rf temp && rm -rf yarn.lock",
     "package": "npm pack --dry-run --json"
   },

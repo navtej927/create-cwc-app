@@ -14,12 +14,13 @@ async function copyTemplateFiles(options: any) {
 }
 
 export const createProject = (_answers: any) => {
-  let sourceDir = path.resolve(process.cwd(), `src/templates/${_answers.type}`);
+  let sourceDir = path.resolve(process.cwd(), `templates/${_answers.type}`);
+  console.log("sourceDirsourceDir", sourceDir)
 
   if (_answers.typescript) {
     sourceDir = path.resolve(
       process.cwd(),
-      `src/templates/${_answers.type}-typescript`
+      `templates/${_answers.type}-typescript`
     );
   }
 

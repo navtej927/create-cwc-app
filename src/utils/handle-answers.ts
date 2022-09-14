@@ -1,12 +1,12 @@
 import chalk from "chalk";
-import fs from "fs";
 import Listr from "listr";
 import { execa } from "execa";
-
-import { createProject } from "./create-project.js";
 import { projectInstall } from "pkg-install";
 
+import { createProject } from "./create-project.js";
+
 export const handleAnswers = async (_answers: any) => {
+  console.log("handleAnswers", _answers)
   const tasks = new Listr([
     {
       title: "Creating project with template files...",
