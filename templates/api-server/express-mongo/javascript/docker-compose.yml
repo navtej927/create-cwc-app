@@ -1,0 +1,20 @@
+version: '3.8'
+services:
+  mongo:
+    image: mongo
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=root
+      - MONGO_INITDB_ROOT_PASSWORD=rootp
+    #volumes:
+      #- ./mongo/data:/data/db
+      #- ./seed.js:/docker-entrypoint-initdb.d/init-mongo.js:ro
+
+  users-api:
+    build: ./users-api
+    ports:
+      - 4001:4001
+    volumes:
+      - ./users-api/src:/usr/src/app/src
+    command: npm run dev
+    depends_on:
+      - mongo
