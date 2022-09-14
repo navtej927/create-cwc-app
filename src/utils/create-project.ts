@@ -8,14 +8,17 @@ const access = promisify(fs.access);
 const copy = promisify(ncp);
 
 async function copyTemplateFiles(options: any) {
-  return copy(options.templateDirectory, options.targetDirectory, {
+  return await copy(options.templateDirectory, options.targetDirectory, {
     clobber: false,
   });
 }
 
 export const createProject = (_answers: any) => {
   let sourceDir = path.resolve(process.cwd(), `templates/${_answers.type}`);
-  console.log("sourceDirsourceDir", sourceDir)
+  const targetDir = path.resolve(process.cwd(), `${_answers.dir}`);
+
+  console.log("sourceDir", sourceDir);
+  console.log("targetDir", targetDir);
 
   if (_answers.typescript) {
     sourceDir = path.resolve(
@@ -24,7 +27,6 @@ export const createProject = (_answers: any) => {
     );
   }
 
-  const targetDir = _answers.dir;
 
   copyTemplateFiles({
     templateDirectory: sourceDir,
