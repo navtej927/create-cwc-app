@@ -30,12 +30,4 @@ export const createProject = (_answers: any) => {
     templateDirectory: sourceDir,
     targetDirectory: targetDir,
   });
-
-  // handle type
-  // switch (key) {
-  //     case "value":
-  //         break;
-  //     default:
-  //         break;
-  // }
 };

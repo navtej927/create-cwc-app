@@ -9,10 +9,5 @@ export async function cli() {
   // get the args
   const args = handleArgs();
   const answers = await handleQuestions(args);
-
-  try {
-    await handleAnswers(answers);
-  } catch (error) {
-    console.log("----->", error);
-  }
+  await handleAnswers(answers);
 }
