@@ -1,6 +1,6 @@
 {
   "name": "create-cwc-app",
-  "version": "1.0.13",
+  "version": "1.0.14",
   "description": "",
   "exports": "./dist/cli.js",
   "type": "module",
