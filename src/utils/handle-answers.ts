@@ -21,6 +21,7 @@ export const handleAnswers = async (_answers: any) => {
       title: "Install dependencies",
       task: () =>
         projectInstall({
+          prefer: "npm",
           cwd: _answers.dir,
         }),
     },
