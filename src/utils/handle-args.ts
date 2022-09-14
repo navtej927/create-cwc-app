@@ -1,31 +1,23 @@
-import yargs, { Argv } from "yargs";
+import yargs from "yargs";
 import { hideBin } from "yargs/helpers";
-
-// interface Arguments extends Argv {
-//   _: any;
-//   dir: string;
-//   type: string;
-//   git: string;
-//   open: string;
-// }
 
 export const handleArgs = async () => {
   const args: any = yargs(hideBin(process.argv))
+    .help()
     .options({
       type: {
         type: "string",
-        default: false,
         alias: "t",
-        describe: "type of the project",
+        describe: "Type of the project:",
       },
       git: {
-        type: "string",
-        alias: "o",
-        describe: "do you want to initialise the git repository",
+        type: "boolean",
+        alias: "g",
+        describe: "Initialize repo with git",
       },
-      open: { type: "boolean", alias: "o", describe: "start dev server" },
+      open: { type: "boolean", alias: "o", describe: "Run dev server" },
     })
-    .help().argv;
+    .epilog("copyright 2019").argv;
 
   return {
     dir: args._[0],
