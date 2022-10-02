@@ -1,5 +1,10 @@
 import React from 'react';
+import './App.scss';
 
 export const App = () => {
-    return <h3>React Typescript Application</h3>;
+    return (
+        <div className="container">
+            <div>REACT APP</div>
+        </div>
+    );
 };

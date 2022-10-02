@@ -28,10 +28,6 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: "./public/index.html",
     }),
-    new Dotenv({
-      path: `./.env.${
-        process.env.APP_ENV ? process.env.APP_ENV : "development"
-      }`,
-    }),
+    new Dotenv({}),
   ],
 };
