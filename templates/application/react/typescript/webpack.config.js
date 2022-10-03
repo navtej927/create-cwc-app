@@ -5,7 +5,6 @@ const path = require('path');
 
 module.exports = (_, argv) => {
     const isProd = argv['mode'] === 'production';
-    console.log('---------isProd', isProd);
 
     return {
         entry: './src/index.tsx',
