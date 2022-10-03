@@ -4,7 +4,7 @@ import './App.scss';
 export const App = () => {
     return (
         <div className="container">
-            <div>REACT APP</div>
+            <div>{process.env.APP_NAME} - Application</div>
         </div>
     );
 };
