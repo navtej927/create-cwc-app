@@ -2,8 +2,8 @@ FROM node:18
 
 # Create app directory
 WORKDIR /usr/src/app
-COPY package*.json .
-RUN npm install
+COPY package.json .
+COPY yarn.lock .
+RUN yarn
 COPY . .
-EXPOSE 8080
 CMD [ "yarn", "dev" ]
